@@ -1,0 +1,165 @@
+:root {
+    --main-bg: #61bcbc;
+    --main-bg-tr: #61bcbcCC;
+    --gal-bg: #3c4856;
+    --button-bg: #46789f;
+}
+.sugal-gallery-heading {
+    text-align: center;
+}
+.sugal-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.sugal-gallery:before,
+.sugal-gallery:after {
+    content: unset;
+}
+.sugal-gallery-thumb-wrap {
+    width: 300px;
+    background-size: cover;
+    padding: 1rem;
+    transition: height 500ms ease-in;
+    height: 300px;
+}
+.sugal-gallery-thumb {
+    height: 268px;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid var(--main-bg);
+    border-radius: 10px;
+}
+.sugal-gallery-thumb:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: transparent;
+    transition: background-color 300ms ease-in-out;
+    border-radius: 8px;
+}
+.sugal-gallery-thumb-wrap:hover .sugal-gallery-thumb:after {
+    background-color: #00000080;
+}
+.sugal-gallery-thumb-active.sugal-gallery-thumb-wrap {
+    height: 850px;
+}
+.sugal-gallery-thumb-active.sugal-gallery-thumb-wrap .sugal-gallery-thumb {
+    cursor: auto;
+}
+.sugal-gallery-item-wrap {
+    /*height: 500px;*/
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 100;
+}
+.sugal-gallery-item {
+    margin: 1rem;
+    background-color: var(--gal-bg);
+    height: 100%;
+    display: flex;
+    padding: 3rem 7rem;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid var(--main-bg);
+}
+.sugal-gallery-item-loader {
+    width: 200px;
+    margin: auto;
+    text-align: center;
+}
+.sugal-gallery-item-loader-text {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.sugal-gallery-item-loader-icon img {
+    width: 25%;
+}
+.sugal-gallery-item-slider-wrap {
+    width: 40%;
+    padding-right: 2rem;
+}
+.sugal-gallery-item-content-wrap {
+    width: 60%;
+    padding-left: 2rem;
+    text-align: center;
+}
+.sugal-gallery-item-content-text {
+    color: white;
+    font-family: Georgia1, Georgia, serif;
+    margin-bottom: 3rem;
+}
+.sugal-gallery-item-button {
+    background: var( --button-bg);
+    border-radius: 50px;
+    font: 16px/22px 'Roboto', sans-serif;
+    border: 0;
+    padding: 12px 30px 10px;
+    min-width: 263px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+}
+.sugal-gallery-item-button:hover,
+.sugal-gallery-item-button:focus {
+    background: var(--main-bg);
+    color: white;
+}
+.sugal-gallery-thumb-label {
+    position: absolute;
+    width: 100%;
+    bottom: 1rem;
+    padding: .5rem;
+    color: white;
+}
+.sugal-gallery-thumb-label-title,
+.sugal-gallery-thumb-label-description {
+    padding: 0 .5rem;
+    position: relative;
+    z-index: 30;
+}
+.sugal-gallery-thumb-label-bg {
+    position: absolute;
+    width: 97%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--main-bg-tr);
+    transition: width 300ms ease-in-out;
+    z-index: 20;
+}
+.sugal-gallery-thumb-label-title{
+    font-size: 1.25rem;
+}
+.sugal-gallery-thumb-label-description {
+    font-size: .75rem;
+}
+.sugal-gallery-thumb:hover .sugal-gallery-thumb-label-bg {
+    width: 3%;
+}
+.sugal-gallery-item-close {
+    position: absolute;
+    width: 2rem;
+    right: 2rem;
+    top: 2rem;
+    cursor: pointer;
+}
+.sugal-gallery-item-close svg {
+    width: 100%;
+    fill: var(--main-bg);
+    stroke: var(--main-bg);
+}
+.sugal-gallery-item-close svg:hover,
+.sugal-gallery-item-close svg:focus {
+    fill: #bbbcbd;
+    stroke: #bbbcbd;
+}
